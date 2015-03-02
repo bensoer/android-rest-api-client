@@ -7,18 +7,18 @@ Download the file and add your package name if required at the top of the file
 
 To create an instance of the client call its constructor like so:
 ````java
-RESTAPIClient client = new RESTAPIClient("http://api.google.com/api);
+RESTAPIClient client = new RESTAPIClient("http://api.google.com/api");
 ````
 The parameter passed in the constructor is the base point for all of your api calls. Future calls will only require the route path. You can change the base path at anytime after creation with:
 ````java
-client.changeBaseURL("http://myapi.com/api);
+client.changeBaseURL("http://myapi.com/api");
 ````
 Now using your instance you can make all of the 4 standard GET, PUT, POST, and DELETE REST calls with the appropriate methods. See the API section for more details on these calls
 ````java
 client.getData("/news");
 client.postData("/news", jsonBody);
-client.putData("/news/article/1, jsonBody);
-client.deleteData("/news/article/5);
+client.putData("/news/article/1", jsonBody);
+client.deleteData("/news/article/5");
 ````
 The json response from the server is captured within the instance after the call is made. You can retrieve it either as a stringified json or as a json object. Note in this current version, the response <b>must</b> come back as a json object. JSONArray support is still under development
 ````java
@@ -31,6 +31,10 @@ After that your ready to make another API call. At each call the previous captur
 Create Instance:
 ````java
 RESTAPIClient client = new RESTAPIClient(String baseURL);
+````
+Change the Base URL
+````java
+client.setBaseURL(String baseURL);
 ````
 Make a GET request call
 ````java
