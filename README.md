@@ -50,7 +50,7 @@ client.putData(String route, JSONObject bodyContent);
 ````
 Make a DELETE request call
 ````java
-client.deleteData(Strign route);
+client.deleteData(String route);
 ````
 Get json Response as a String or JSONOBject. Note the server must respond with a json object
 ````java
